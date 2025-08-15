@@ -53,4 +53,4 @@ personal-portfolio
 
 ## Author
 
-[Your Name] - [Your Contact Information] - [Your LinkedIn Profile or Website]
+Waqar Akhtar - syed.waqar.akhtar08@gmail.com - 
