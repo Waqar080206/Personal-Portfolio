@@ -1,30 +1,28 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Get current page name from URL
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    
-    // Remove active class from all nav links
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        
-        // Get the href attribute and extract filename
-        const href = link.getAttribute('href');
-        const linkPage = href ? href.split('/').pop() : '';
-        
-        // Add active class to current page link
-        if (linkPage === currentPage || 
-            (currentPage === '' && linkPage === 'index.html') ||
-            (currentPage === 'index.html' && linkPage === 'index.html')) {
-            link.classList.add('active');
-        }
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.nav-links a[href]');
+
+  // Normalize current path (treat "/" as "/index.html")
+  const currentPath = (location.pathname === '/' ? '/index.html' : location.pathname);
+
+  navLinks.forEach(link => {
+    const rawHref = link.getAttribute('href');            // e.g. "blog.html"
+    const linkPath = new URL(rawHref, location.origin).pathname; // -> "/blog.html"
+
+    // Active state
+    if (linkPath === currentPath) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+
+    // Force navigation for relative same-origin links (protect against global preventDefault)
+    link.addEventListener('click', (e) => {
+      // Ignore external links and hash links
+      if (!rawHref || rawHref.startsWith('#') || /^https?:\/\//i.test(rawHref)) return;
+
+      // If another script called preventDefault, we still navigate explicitly
+      e.preventDefault();
+      window.location.assign(rawHref);
     });
-    
-    // Add click handlers for smooth navigation
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Optional: Add loading state
-            const clickedLink = this.getAttribute('href');
-            console.log('Navigating to:', clickedLink);
-        });
-    });
+  });
 });

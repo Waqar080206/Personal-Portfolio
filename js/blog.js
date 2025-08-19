@@ -4,25 +4,25 @@
 // Blog data with external links
 const blogData = {
   1: {
-    title: "Getting Started with Machine Learning in 2024",
-    category: "AI",
-    date: "Dec 15, 2024",
+    title: "Getting Started with Cloud in 2025",
+    category: "Cloud",
+    date: "Aug 20, 2025",
     readTime: "5 min read",
-    link: "https://medium.com/@waqarakhtar/machine-learning-2024" // Replace with actual blog link
+    link: "https://medium.com/@waqarakhtar/machine-learning-2024" 
   },
   2: {
-    title: "Building Scalable Cloud Architecture with AWS",
-    category: "Cloud", 
-    date: "Dec 10, 2024",
-    readTime: "8 min read",
-    link: "https://dev.to/waqarakhtar/aws-cloud-architecture" // Replace with actual blog link
+    title: "College vs Skills — Student POV",
+    category: "Personal Growth", 
+    date: "Aug 19, 2025",
+    readTime: "1 min read",
+    link: "https://dev.to/waqar_akhtar_f4a1df2340f1/college-vs-skills-student-pov-13pi" 
   },
   3: {
-    title: "Modern Frontend Development with React & TypeScript",
+    title: "Moving Beyond Web Dev",
     category: "Web Dev",
-    date: "Dec 5, 2024", 
-    readTime: "6 min read",
-    link: "https://hashnode.com/@waqarakhtar/react-typescript" // Replace with actual blog link
+    date: "Aug 18, 2025", 
+    readTime: "2 min read",
+    link: "https://dev.to/waqar_akhtar_f4a1df2340f1/moving-beyond-web-dev-4a3m" 
   },
   4: {
     title: "Developer Productivity Tools That Actually Work",

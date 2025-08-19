@@ -87,7 +87,7 @@
                 <div class="form-row">
                     <h4 style="text-align:center">We'd love to hear from you!</h4>
                 </div>
-                <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                <form class="contact-form" action="https://formspree.io/f/xblkvdaw" method="POST">
                     <div class="form-row input-container">
                         <div class="col-xs-12">
                             <div class="styled-input wide">
@@ -97,7 +97,7 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <div class="styled-input">
-                                <input type="email" name="email" required />
+                                <input type="email" name="_replyto" required />
                                 <label>Email</label> 
                             </div>
                         </div>
@@ -114,6 +114,9 @@
                             </div>
                         </div>
                         <div class="col-xs-12">
+                            <!-- Add hidden fields for better email formatting -->
+                            <input type="hidden" name="_subject" value="New Portfolio Contact - Message from Website" />
+                            <input type="hidden" name="_captcha" value="false" />
                             <button type="submit" class="btn-lrg submit-btn">Send Message</button>
                         </div>
                     </div>
