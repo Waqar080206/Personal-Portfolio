@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Waqar Akhtar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="Home">
+                <img src="assets/images/wa.png" alt="Logo" class="logo-img" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="/index.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a></li>
+                <li><a href="/projects.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal-icon lucide-terminal"><path d="M12 19h8"/><path d="m4 17 6-6-6-6"/></svg>Projects</a></li>
+                <li><a href="/blog.html" class="active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg>Blog</a></li>
+                <li><a href="/about.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info-icon lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <h1>Blog</h1>
+                <p>Thoughts, insights, and experiences from my journey in AI, Cloud Engineering, and Web Development.</p>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-grid">
+                    <!-- Blog Card 1 -->
+                    <article class="blog-card" data-blog="1">
+                        <div class="blog-thumbnail">
+                            <img src="assets/images/blog-placeholder.jpg" alt="AI Development" onerror="this.style.display='none'">
+                            <div class="blog-category">AI</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Dec 15, 2024</span>
+                                <span class="blog-read-time">5 min read</span>
+                            </div>
+                            <h3>Getting Started with Machine Learning in 2024</h3>
+                            <p>Exploring the latest trends and tools in machine learning, from neural networks to practical applications that are shaping the future of AI development.</p>
+                            <div class="blog-hover-content">
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 2 -->
+                    <article class="blog-card" data-blog="2">
+                        <div class="blog-thumbnail">
+                            <img src="assets/images/blog-placeholder.jpg" alt="Cloud Architecture" onerror="this.style.display='none'">
+                            <div class="blog-category">Cloud</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Dec 10, 2024</span>
+                                <span class="blog-read-time">8 min read</span>
+                            </div>
+                            <h3>Building Scalable Cloud Architecture with AWS</h3>
+                            <p>A comprehensive guide to designing and implementing scalable cloud solutions using AWS services, best practices, and cost optimization strategies.</p>
+                            <div class="blog-hover-content">
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 3 -->
+                    <article class="blog-card" data-blog="3">
+                        <div class="blog-thumbnail">
+                            <img src="assets/images/blog-placeholder.jpg" alt="Web Development" onerror="this.style.display='none'">
+                            <div class="blog-category">Web Dev</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Dec 5, 2024</span>
+                                <span class="blog-read-time">6 min read</span>
+                            </div>
+                            <h3>Modern Frontend Development with React & TypeScript</h3>
+                            <p>Dive into the world of modern web development with React and TypeScript, covering component patterns, state management, and performance optimization.</p>
+                            <div class="blog-hover-content">
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 4 -->
+                    <article class="blog-card" data-blog="4">
+                        <div class="blog-thumbnail">
+                            <img src="assets/images/blog-placeholder.jpg" alt="Productivity" onerror="this.style.display='none'">
+                            <div class="blog-category">Productivity</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Nov 28, 2024</span>
+                                <span class="blog-read-time">4 min read</span>
+                            </div>
+                            <h3>Developer Productivity Tools That Actually Work</h3>
+                            <p>A curated list of productivity tools and techniques that have significantly improved my development workflow and might help boost yours too.</p>
+                            <div class="blog-hover-content">
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 5 -->
+                    <article class="blog-card" data-blog="5">
+                        <div class="blog-thumbnail">
+                            <img src="assets/images/blog-placeholder.jpg" alt="Open Source" onerror="this.style.display='none'">
+                            <div class="blog-category">Open Source</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Nov 20, 2024</span>
+                                <span class="blog-read-time">7 min read</span>
+                            </div>
+                            <h3>My Journey Contributing to Open Source Projects</h3>
+                            <p>Sharing my experiences, challenges, and learnings from contributing to various open source projects including SSoC'25, SDI'25, and Hacktoberfest.</p>
+                            <div class="blog-hover-content">
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 6 -->
+                    <article class="blog-card" data-blog="6">
+                        <div class="blog-thumbnail">
+                            <img src="assets/images/blog-placeholder.jpg" alt="Career" onerror="this.style.display='none'">
+                            <div class="blog-category">Career</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Nov 15, 2024</span>
+                                <span class="blog-read-time">5 min read</span>
+                            </div>
+                            <h3>From Student to Tech Professional: Key Lessons Learned</h3>
+                            <p>Reflecting on the transition from academic learning to professional development, including tips for new graduates entering the tech industry.</p>
+                            <div class="blog-hover-content">
+                                <button class="read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        Made with <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" 
+     viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2" 
+     stroke-linecap="round" stroke-linejoin="round" 
+     class="lucide lucide-heart-icon lucide-heart">
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
+</svg>
+ by Waqar Akhtar
+    </footer>
+
+    <script src="js/blog.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>
