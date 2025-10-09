@@ -4,11 +4,11 @@
 // Blog data with external links
 const blogData = {
   1: {
-    title: "Getting Started with Cloud in 2025",
-    category: "Cloud",
-    date: "Aug 20, 2025",
+    title: "Hacktoberfest 2025 and the JEE-fication of Indian Tech",
+    category: "Open Source",
+    date: "Oct 10, 2025",
     readTime: "5 min read",
-    link: "https://medium.com/@waqarakhtar/machine-learning-2024" 
+    link: "https://dev.to/waqar_akhtar_f4a1df2340f1/hacktoberfest-2025-and-the-jee-fication-of-indian-tech-4k9f" 
   },
   2: {
     title: "College vs Skills — Student POV",
