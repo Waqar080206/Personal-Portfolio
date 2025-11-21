@@ -5,6 +5,7 @@ import { ProjectCard } from "@/components/project-card";
 import { ProjectModal } from "@/components/project-modal";
 import { HackathonCard } from "@/components/hackathon-card";
 import { DATA } from "@/data/resume";
+import { EXTENDED_PROJECTS } from "@/data/extended-projects";
 import Link from "next/link";
 import { useState } from "react";
 

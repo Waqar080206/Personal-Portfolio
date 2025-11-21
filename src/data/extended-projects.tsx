@@ -540,4 +540,4 @@ export const EXTENDED_PROJECTS = {
     openSource: "Active open source project welcoming community contributions for new features and improvements",
     scalability: "Designed to handle 6,000+ concurrent users with optimized performance and efficient resource utilization"
   }
-} as const;
+} ;
