@@ -13,7 +13,7 @@ import Markdown from "react-markdown";
 
 interface Props {
   title: string;
-  href?: string;
+  href: string;
   description: string;
   dates: string;
   tags: readonly string[];
@@ -25,7 +25,7 @@ interface Props {
     type: string;
     href: string;
   }[];
-  className?: string;
+  onClick?: () => void; // Add onClick prop
 }
 
 export function ProjectCard({
@@ -38,53 +38,55 @@ export function ProjectCard({
   image,
   video,
   links,
-  className,
+  onClick, // Add onClick to destructuring
 }: Props) {
   return (
     <Card
-      className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
-      }
+      className={cn(
+        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 animate-in",
+        onClick && "cursor-pointer" // Add cursor pointer when onClick exists
+      )}
+      onClick={onClick} // Add onClick handler to Card
     >
       <Link
-        href={href || "#"}
-        className={cn("block cursor-pointer", className)}
+        href={onClick ? "#" : href} // Use # when onClick exists, otherwise use href
+        className={cn(
+          "block cursor-pointer",
+          onClick && "pointer-events-none" // Disable link when onClick is used
+        )}
+        onClick={(e) => {
+          if (onClick) {
+            e.preventDefault(); // Prevent navigation when onClick is used
+          }
+        }}
       >
-        {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
-          />
-        )}
         {image && (
-          <Image
-            src={image}
-            alt={title}
-            width={300}
-            height={150}
-            className="h-40 w-full overflow-hidden object-cover object-top dark:brightness-[0.9] dark:hover:brightness-100 transition-all duration-300 ease-out"
-          />
+          <CardHeader className="px-2">
+            <div className="flex space-x-1 w-full">
+              <Image
+                src={image}
+                alt={title}
+                width={500}
+                height={300}
+                className="h-40 w-full overflow-hidden object-cover object-top"
+              />
+            </div>
+          </CardHeader>
         )}
-      </Link>
-      <CardHeader className="px-2">
-        <div className="space-y-1">
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
-          {dates && <time className="font-sans text-xs">{dates}</time>}
-          <div className="hidden font-sans text-xs underline print:visible">
-            {link?.replace("https://", "").replace("www.", "").replace("/", "")}
+        <CardContent className="flex flex-col p-2">
+          <div className="space-y-2">
+            <CardTitle className="mt-1 text-base">{title}</CardTitle>
+            <time className="font-sans text-xs">{dates}</time>
+            <div className="hidden font-sans text-xs underline print:visible">
+              {link?.replace("https://", "").replace("www.", "").replace("/", "")}
+            </div>
+            <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
+              {description}
+            </Markdown>
           </div>
-          <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
-            {description}
-          </Markdown>
-        </div>
-      </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-2">
-        {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
+        </CardContent>
+        <CardFooter className="p-2">
+          <div className="flex flex-wrap gap-1">
             {tags?.map((tag) => (
               <Badge
                 className="px-1 py-0 text-[10px]"
@@ -95,22 +97,8 @@ export function ProjectCard({
               </Badge>
             ))}
           </div>
-        )}
-      </CardContent>
-      <CardFooter className="px-2 pb-2">
-        {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
-            {links?.map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
-                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
-                  {link.icon}
-                  {link.type}
-                </Badge>
-              </Link>
-            ))}
-          </div>
-        )}
-      </CardFooter>
+        </CardFooter>
+      </Link>
     </Card>
   );
 }
