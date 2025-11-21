@@ -115,13 +115,13 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             {/* Main Image/Video Display */}
             <div className="relative aspect-video rounded-lg overflow-hidden bg-muted">
               {showVideo && videos.length > 0 ? (
-                <iframe
-                  src={videos[0].url.replace('watch?v=', 'embed/')}
-                  title={videos[0].title}
-                  className="w-full h-full"
-                  allowFullScreen
-                />
-              ) : (
+  <iframe
+    src={videos[0]?.url?.replace('watch?v=', 'embed/') || ''}
+    title={videos[0]?.title || 'Video'}
+    className="w-full h-full"
+    allowFullScreen
+  />
+)  : (
                 <div className="relative w-full h-full">
                   <Image
                     src={images[currentImageIndex]}
@@ -192,8 +192,8 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                     }`}
                   >
                     <Image
-                      src={video.thumbnail}
-                      alt={video.title}
+                      src={video?.thumbnail || '/placeholder.jpg'}
+                      alt={video?.title || 'Video thumbnail'}
                       width={64}
                       height={48}
                       className="w-full h-full object-cover"
