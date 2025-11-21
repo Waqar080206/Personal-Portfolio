@@ -13,8 +13,9 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Waqar Akhtar - Portfolio",
-  description: "AI & Data Science Student | Full Stack Developer",
+  title: "WA", // Change this to show "WA" in tab
+  description: "Waqar Akhtar - AI & Data Science Student | Full Stack Developer",
+  metadataBase: new URL('https://waqar.tech'), // Add your actual domain
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -34,6 +35,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Ensure CSS is loaded properly */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased max-w-2xl xl:max-w-3xl mx-auto py-12 sm:py-24 px-6",
