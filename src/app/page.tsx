@@ -1,3 +1,5 @@
+"use client";
+
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -24,12 +26,6 @@ export default function Page() {
         <div className="mx-auto w-full max-w-3xl space-y-8">
           <div className="gap-2 flex justify-between flex-col-reverse md:flex-row">
             <div className="justify-center flex-col flex flex-1 space-y-1.5">
-              {/* <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className=""
-                yOffset={8}
-                text={}
-              /> */}
               <p className="mx-auto md:mx-0 text-3xl font-bold tracking-tighter sm:text-4xl xl:text-5xl/none">
                 Hi, I&apos;m {DATA.name} 
               </p>
@@ -44,14 +40,14 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       <section id="about" className="pt-6">
         <h2 className="text-xl font-bold">About</h2>
-        {/* <BlurFade delay={BLUR_FADE_DELAY}> */}
         <Markdown className="prose max-w-full text-pretty font-sans text-base text-muted-foreground dark:prose-invert">
           {DATA.summary}
         </Markdown>
-        {/* </BlurFade> */}
       </section>
+
       <section id="skills" className="pt-6">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY}>
@@ -60,7 +56,7 @@ export default function Page() {
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY + id * 0.02}>
-                <Badge key={skill} className="">
+                <Badge className="">
                   {skill}
                 </Badge>
               </BlurFade>
@@ -68,6 +64,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -80,7 +77,7 @@ export default function Page() {
                   Featured Work
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Here are some of my standout projects that showcase my technical skills and problem-solving abilities.{" "}
+                  Here are some of my standout projects that showcase my technical skills and problem-solving abilities.
                 </p>
               </div>
             </div>
@@ -104,28 +101,32 @@ export default function Page() {
               </BlurFade>
             ))}
           </div>
-                 {/* See More Projects Link */}
-        <BlurFade delay={BLUR_FADE_DELAY * 13}>
-          <div className="flex justify-center">
-            <Link
-              href="/projects"
-              className="inline-flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              See more projects...
-             
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M17 8l4 4m0 0l-4 4m4-4H3" 
-                />
-             
-            </Link>
-          </div>
-        </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 13}>
+            <div className="flex justify-center">
+              <Link
+                href="/projects"
+                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+              >
+                See more projects...
+                <svg 
+                  className="size-4" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M17 8l4 4m0 0l-4 4m4-4H3" 
+                  />
+                </svg>
+              </Link>
+            </div>
+          </BlurFade>
         </div>
-
       </section>
+
       <section id="experience" className="pt-6">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -137,7 +138,6 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 6 + id * 0.05}
             >
               <ResumeCard
-                key={work.company}
                 icon={work.icon}
                 logoUrl={work.logoUrl}
                 altText={work.company}
@@ -152,6 +152,7 @@ export default function Page() {
           ))}
         </div>
       </section>
+
       <section id="education" className="pt-6">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -163,7 +164,6 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 8 + id * 0.05}
             >
               <ResumeCard
-                key={education.school}
                 href={education.href}
                 icon={education.icon}
                 logoUrl={education.logoUrl}
@@ -190,8 +190,7 @@ export default function Page() {
                 className="size-4" 
                 fill="none" 
                 stroke="currentColor" 
-                viewBox="0 0 24 24" 
-                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
               >
                 <path 
                   strokeLinecap="round" 
@@ -229,18 +228,16 @@ export default function Page() {
                     {Object.entries(DATA.contact.social)
                       .filter(([_, social]) => social.contact)
                       .map(([name, social], index) => (
-                        <>
-                          <Tooltip key={index}>
-                            <TooltipTrigger asChild>
-                              <Link href={social.url as unknown as UrlObject}>
-                                <social.icon className="size-7" />
-                              </Link>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p>{name}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </>
+                        <Tooltip key={index}>
+                          <TooltipTrigger asChild>
+                            <Link href={social.url as unknown as UrlObject}>
+                              <social.icon className="size-7" />
+                            </Link>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>{name}</p>
+                          </TooltipContent>
+                        </Tooltip>
                       ))}
                   </div>
                 </BlurFade>
