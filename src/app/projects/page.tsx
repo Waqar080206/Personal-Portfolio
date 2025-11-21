@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { ProjectCard } from "@/components/project-card";
 import { ProjectModal } from "@/components/project-modal";
-import { BlurFade } from "@/components/magicui/blur-fade";
+import BlurFade from "@/components/magicui/blur-fade"; // Default import instead of named import
 import Link from "next/link";
 import { DATA } from "@/data/resume";
 
@@ -65,7 +65,7 @@ export default function ProjectsPage() {
                 dates={project.dates}
                 tags={project.technologies}
                 image={project.image}
-                video={project.video}
+                video={project.video || ""}
                 links={project.links}
                 onClick={() => openModal(project)}
               />
