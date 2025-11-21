@@ -62,8 +62,8 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   if (!isOpen || !project) return null;
 
   const extendedData = EXTENDED_PROJECTS[project.title as keyof typeof EXTENDED_PROJECTS];
-  const images = extendedData?.images || [project.image];
-  const videos = extendedData?.videos || [];
+  const images = extendedData?.images ?? [project.image];
+  const videos = extendedData?.videos ?? [];
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % images.length);
@@ -243,12 +243,12 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             </div>
           )}
 
-          {/* Accomplishments - Only for EchoME X */}
+          {/* Accomplishments */}
           {extendedData && 'accomplishments' in extendedData && (
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Accomplishments I'm Proud Of</h3>
+              <h3 className="text-lg font-semibold">Key Accomplishments</h3>
               <ul className="space-y-2">
-                {(extendedData.accomplishments as string[]).map((accomplishment: string, index: number) => (
+                {Array.from(extendedData.accomplishments as readonly string[]).map((accomplishment: string, index: number) => (
                   <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0" />
                     {accomplishment}
@@ -258,12 +258,12 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             </div>
           )}
 
-          {/* What I Learned - Only for EchoME X */}
+          {/* What I Learned */}
           {extendedData && 'whatILearned' in extendedData && (
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">What I Learned</h3>
               <ul className="space-y-2">
-                {(extendedData.whatILearned as string[]).map((learning: string, index: number) => (
+                {Array.from(extendedData.whatILearned as readonly string[]).map((learning: string, index: number) => (
                   <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0" />
                     {learning}
@@ -273,12 +273,12 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             </div>
           )}
 
-          {/* Built With - Only for EchoME X */}
+          {/* Built With */}
           {extendedData && 'builtWith' in extendedData && (
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Built With</h3>
               <div className="flex flex-wrap gap-2">
-                {(extendedData.builtWith as string[]).map((tech: string) => (
+                {Array.from(extendedData.builtWith as readonly string[]).map((tech: string) => (
                   <Badge key={tech} variant="secondary" className="text-xs">
                     {tech}
                   </Badge>
@@ -296,165 +296,158 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               </p>
             </div>
           )}
-        
-        {/* Key Insights - Only for Restaurant Analytics */}
-        {extendedData && 'keyInsights' in extendedData && (
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Key Business Insights</h3>
-            <ul className="space-y-2">
-              {(extendedData.keyInsights as string[]).map((insight: string, index: number) => (
-                <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0" />
-                  {insight}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        
-        {/* ML Model Info - Only for Restaurant Analytics */}
-        {extendedData && 'mlModel' in extendedData && (
-          <div className="space-y-4 p-4 rounded-lg bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 border border-orange-200 dark:border-orange-800">
-            <h3 className="text-lg font-semibold text-orange-800 dark:text-orange-200">Machine Learning Model</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {Object.entries(extendedData.mlModel as Record<string, string>).map(([key, value]) => (
-                <div key={key} className="flex flex-col space-y-1">
-                  <span className="text-sm font-medium text-orange-700 dark:text-orange-300">{key}</span>
-                  <span className="text-xs text-muted-foreground">{value}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-        
-        {/* Collaborators - Only for Restaurant Analytics */}
-        {extendedData && 'collaborators' in extendedData && (
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Team Collaboration</h3>
-            <p className="text-muted-foreground leading-relaxed italic">
-              {extendedData.collaborators}
-            </p>
-          </div>
-        )}
-    
-        
-        {/* How It Works - Only for PrepPal */}
-        {extendedData && 'howItWorks' in extendedData && (
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">How It Works</h3>
-            <ol className="space-y-2">
-              {(extendedData.howItWorks as string[]).map((step: string, index: number) => (
-                <li key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <div className="flex-shrink-0 w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium mt-0.5">
-                    {index + 1}
-                  </div>
-                  {step}
-                </li>
-              ))}
-            </ol>
-          </div>
-        )}
-        
-        {/* Page Overview - Only for PrepPal */}
-        {extendedData && 'pageOverview' in extendedData && (
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">App Structure</h3>
-            <ul className="space-y-2">
-              {(extendedData.pageOverview as string[]).map((page: string, index: number) => (
-                <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0" />
-                  {page}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        
-        {/* AI Integration Info - Only for PrepPal */}
-        {extendedData && 'aiIntegration' in extendedData && (
-          <div className="space-y-4 p-4 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border border-blue-200 dark:border-blue-800">
-            <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-200">AI Integration</h3>
-            <p className="text-muted-foreground leading-relaxed text-sm">
-              {extendedData.aiIntegration}
-            </p>
-          </div>
-        )}
 
-        {/* Project URL - For Azinhack */}
-        {extendedData && 'projectUrl' in extendedData && (
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Live Project</h3>
-            <div className="p-4 rounded-lg bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border border-green-200 dark:border-green-800">
-              <Link 
-                href={extendedData.projectUrl as string}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green-800 dark:text-green-200 font-medium hover:underline"
-              >
-                🌐 Visit {extendedData.projectUrl}
-              </Link>
-            </div>
-          </div>
-        )}
-
-        {/* Collaboration Type - For team projects */}
-        {extendedData && 'collaborationType' in extendedData && (
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Collaboration</h3>
-            <p className="text-muted-foreground leading-relaxed italic">
-              {extendedData.collaborationType}
-            </p>
-          </div>
-        )}
-
-        {/* Open Source Info - For UniONE */}
-        {extendedData && 'openSource' in extendedData && (
-          <div className="space-y-4 p-4 rounded-lg bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 border border-indigo-200 dark:border-indigo-800">
-            <h3 className="text-lg font-semibold text-indigo-800 dark:text-indigo-200">Open Source Project</h3>
-            <p className="text-muted-foreground leading-relaxed text-sm">
-              {extendedData.openSource}
-            </p>
-          </div>
-        )}
-
-        {/* Scalability Info - For UniONE */}
-        {extendedData && 'scalability' in extendedData && (
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Scalability & Performance</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              {extendedData.scalability}
-            </p>
-          </div>
-        )}
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Key Features */}
+          {/* Key Insights - Only for Restaurant Analytics */}
+          {extendedData && 'keyInsights' in extendedData && (
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Key Features</h3>
-              <div className="space-y-3">
-                {extendedData?.keyFeatures.map((feature, index) => (
-                  <div key={index} className="p-4 rounded-lg bg-muted/50 space-y-2">
-                    <h4 className="font-medium text-sm">{feature.title}</h4>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
+              <h3 className="text-lg font-semibold">Key Business Insights</h3>
+              <ul className="space-y-2">
+                {Array.from(extendedData.keyInsights as readonly string[]).map((insight: string, index: number) => (
+                  <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0" />
+                    {insight}
+                  </li>
                 ))}
+              </ul>
+            </div>
+          )}
+
+          {/* How It Works - Only for PrepPal */}
+          {extendedData && 'howItWorks' in extendedData && (
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">How It Works</h3>
+              <ol className="space-y-2">
+                {Array.from(extendedData.howItWorks as readonly string[]).map((step: string, index: number) => (
+                  <li key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <div className="flex-shrink-0 w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium mt-0.5">
+                      {index + 1}
+                    </div>
+                    {step}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+
+          {/* Page Overview - Only for PrepPal */}
+          {extendedData && 'pageOverview' in extendedData && (
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">App Structure</h3>
+              <ul className="space-y-2">
+                {Array.from(extendedData.pageOverview as readonly string[]).map((page: string, index: number) => (
+                  <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0" />
+                    {page}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Project URL - For Azinhack */}
+          {extendedData && 'projectUrl' in extendedData && (
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Live Project</h3>
+              <div className="p-4 rounded-lg bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border border-green-200 dark:border-green-800">
+                <Link 
+                  href={extendedData.projectUrl as string}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-800 dark:text-green-200 font-medium hover:underline"
+                >
+                  🌐 Visit {extendedData.projectUrl}
+                </Link>
               </div>
             </div>
+          )}
 
-            {/* Technical Details */}
+          {/* Collaboration Type - For team projects */}
+          {extendedData && 'collaborationType' in extendedData && (
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Technical Implementation</h3>
-              <div className="space-y-3">
-                {extendedData?.technicalDetails && Object.entries(extendedData.technicalDetails).map(([key, value]) => (
-                  <div key={key} className="flex flex-col space-y-1 p-3 rounded-lg bg-muted/30">
-                    <span className="text-sm font-medium">{key}</span>
+              <h3 className="text-lg font-semibold">Collaboration</h3>
+              <p className="text-muted-foreground leading-relaxed italic">
+                {extendedData.collaborationType}
+              </p>
+            </div>
+          )}
+
+          {/* Open Source Info - For UniONE */}
+          {extendedData && 'openSource' in extendedData && (
+            <div className="space-y-4 p-4 rounded-lg bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 border border-indigo-200 dark:border-indigo-800">
+              <h3 className="text-lg font-semibold text-indigo-800 dark:text-indigo-200">Open Source Project</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">
+                {extendedData.openSource}
+              </p>
+            </div>
+          )}
+
+          {/* Scalability Info - For UniONE */}
+          {extendedData && 'scalability' in extendedData && (
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Scalability & Performance</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {extendedData.scalability}
+              </p>
+            </div>
+          )}
+
+          {/* AI Integration Info - Only for PrepPal */}
+          {extendedData && 'aiIntegration' in extendedData && (
+            <div className="space-y-4 p-4 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border border-blue-200 dark:border-blue-800">
+              <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-200">AI Integration</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">
+                {extendedData.aiIntegration}
+              </p>
+            </div>
+          )}
+
+          {/* ML Model Info - Only for Restaurant Analytics */}
+          {extendedData && 'mlModel' in extendedData && (
+            <div className="space-y-4 p-4 rounded-lg bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 border border-orange-200 dark:border-orange-800">
+              <h3 className="text-lg font-semibold text-orange-800 dark:text-orange-200">Machine Learning Model</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {Object.entries(extendedData.mlModel as Record<string, string>).map(([key, value]) => (
+                  <div key={key} className="flex flex-col space-y-1">
+                    <span className="text-sm font-medium text-orange-700 dark:text-orange-300">{key}</span>
                     <span className="text-xs text-muted-foreground">{value}</span>
                   </div>
                 ))}
               </div>
             </div>
+          )}
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Key Features */}
+            {extendedData?.keyFeatures && (
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">Key Features</h3>
+                <div className="space-y-3">
+                  {extendedData.keyFeatures.map((feature, index) => (
+                    <div key={index} className="p-4 rounded-lg bg-muted/50 space-y-2">
+                      <h4 className="font-medium text-sm">{feature.title}</h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Technical Details */}
+            {extendedData?.technicalDetails && (
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">Technical Implementation</h3>
+                <div className="space-y-3">
+                  {Object.entries(extendedData.technicalDetails).map(([key, value]) => (
+                    <div key={key} className="flex flex-col space-y-1 p-3 rounded-lg bg-muted/30">
+                      <span className="text-sm font-medium">{key}</span>
+                      <span className="text-xs text-muted-foreground">{value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Technologies */}
