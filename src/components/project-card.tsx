@@ -10,11 +10,12 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 import Markdown from "react-markdown";
 
 interface Props {
   title: string;
-  href: string;
+  href?: string;
   description: string;
   dates: string;
   tags: readonly string[];
@@ -26,6 +27,7 @@ interface Props {
     type: string;
     href: string;
   }[];
+  className?: string;
   onClick?: () => void;
 }
 
@@ -39,38 +41,47 @@ export function ProjectCard({
   image,
   video,
   links,
+  className,
   onClick,
 }: Props) {
-  const handleClick = () => {
-    if (onClick) {
-      onClick();
-    } else {
-      window.open(href, '_blank');
-    }
-  };
-
   return (
     <Card
-      className={cn(
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 animate-in cursor-pointer"
-      )}
-      onClick={handleClick}
+      className={
+        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
+      }
     >
-      {image && (
-        <CardHeader className="px-2">
-          <div className="flex space-x-1 w-full">
-            <Image
-              src={image}
-              alt={title}
-              width={500}
-              height={300}
-              className="h-40 w-full overflow-hidden object-cover object-top"
-            />
-          </div>
-        </CardHeader>
-      )}
-      <CardContent className="flex flex-col p-2">
-        <div className="space-y-2">
+      <Link
+        href={onClick ? "#" : (href || "#")}
+        className={cn("block cursor-pointer", className)}
+        onClick={(e) => {
+          if (onClick) {
+            e.preventDefault();
+            onClick();
+          }
+        }}
+      >
+        {video && (
+          <video
+            src={video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
+          />
+        )}
+        {image && (
+          <Image
+            src={image}
+            alt={title}
+            width={500}
+            height={300}
+            className="h-40 w-full overflow-hidden object-cover object-top"
+          />
+        )}
+      </Link>
+      <CardHeader className="px-2">
+        <div className="space-y-1">
           <CardTitle className="mt-1 text-base">{title}</CardTitle>
           <time className="font-sans text-xs">{dates}</time>
           <div className="hidden font-sans text-xs underline print:visible">
@@ -80,19 +91,40 @@ export function ProjectCard({
             {description}
           </Markdown>
         </div>
+      </CardHeader>
+      <CardContent className="mt-auto flex flex-col px-2">
+        {tags && tags.length > 0 && (
+          <div className="mt-2 flex flex-wrap gap-1">
+            {tags?.map((tag) => (
+              <Badge
+                className="px-1 py-0 text-[10px]"
+                variant="secondary"
+                key={tag}
+              >
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )}
       </CardContent>
-      <CardFooter className="p-2">
-        <div className="flex flex-wrap gap-1">
-          {tags?.map((tag) => (
-            <Badge
-              className="px-1 py-0 text-[10px]"
-              variant="secondary"
-              key={tag}
-            >
-              {tag}
-            </Badge>
-          ))}
-        </div>
+      <CardFooter className="px-2 pb-2">
+        {links && links.length > 0 && (
+          <div className="flex flex-row flex-wrap items-start gap-1">
+            {links?.map((link, idx) => (
+              <Link 
+                href={link?.href} 
+                key={idx} 
+                target="_blank"
+                onClick={(e) => e.stopPropagation()} // Prevent card click when clicking links
+              >
+                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
+                  {link.icon}
+                  {link.type}
+                </Badge>
+              </Link>
+            ))}
+          </div>
+        )}
       </CardFooter>
     </Card>
   );

@@ -417,8 +417,8 @@ export const DATA = {
       video: "",
     },
     {
-      title: "UniONE",
-      href: "#", // Add GitHub link if available
+      title: "USAR Samvad",
+      href: "https://github.com/IoscEdc/IoSC-Student-Teacher", // Add GitHub link if available
       dates: "2024",
       active: true,
       description: "Comprehensive School Management System supporting 6,000+ concurrent users with attendance tracking, role-based access, and performance visualization.",
@@ -426,11 +426,16 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "#", // Add actual GitHub link
+          href: "https://github.com/IoscEdc/IoSC-Student-Teacher", // Add actual GitHub link
           icon: <Icons.github className="size-3" />
+        },
+        {
+          type: "Website",
+          href: "https://ioscstudentteacher.vercel.app/", // Add actual demo link
+          icon: <Icons.globe className="size-3" />
         }
       ],
-      image: "/projects/unione/dashboard.png",
+      image: "/projects/uni/u1.png",
       video: ""
     }
   ],
