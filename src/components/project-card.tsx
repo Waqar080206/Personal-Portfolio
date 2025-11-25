@@ -74,9 +74,11 @@ export function ProjectCard({
           <Image
             src={image}
             alt={title}
-            width={500}
-            height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top"
+            width={362} // Actual display width
+            height={177} // Actual display height
+            className="h-40 w-full object-cover object-top"
+            priority={false}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         )}
       </Link>
@@ -129,3 +131,4 @@ export function ProjectCard({
     </Card>
   );
 }
+
