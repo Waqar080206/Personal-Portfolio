@@ -15,6 +15,7 @@ const ProjectCard = dynamic(() => import('@/components/project-card').then(mod =
 
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+import { ProgramCard } from "@/components/program-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -145,7 +146,7 @@ export default function Page() {
             </BlurFade>
             {DATA.work.map((work, id) => (
               <BlurFade
-                key={work.company}
+                key={`${work.company}-${id}`}
                 delay={BLUR_FADE_DELAY * 6 + id * 0.05}
               >
                 <ResumeCard
@@ -158,9 +159,54 @@ export default function Page() {
                   badges={work.badges}
                   period={`${work.start} - ${work.end ?? "Present"}`}
                   description={work.description}
+                  roles={work.roles?.map((role) => ({
+                    title: role.title,
+                    period: `${role.start} - ${role.end ?? "Present"}`,
+                    description: role.description,
+                  }))}
                 />
               </BlurFade>
             ))}
+          </div>
+        </section>
+
+        <section id="programs" className="pt-6">
+          <div className="flex min-h-0 flex-col gap-y-3">
+            <BlurFade delay={BLUR_FADE_DELAY * 6.5}>
+              <div className="space-y-1">
+                <h2 className="text-xl font-bold">
+                  Programs &amp; Professional Development
+                </h2>
+                <p className="text-sm text-muted-foreground">
+                  Selected programs, leadership development, and specialized
+                  learning experiences.
+                </p>
+              </div>
+            </BlurFade>
+            <div className="grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2">
+              {DATA.programs.map((program, id) => (
+                <BlurFade
+                  key={`${program.organization}-${program.title}-${id}`}
+                  delay={BLUR_FADE_DELAY * 6.5 + id * 0.05}
+                  className="h-full"
+                >
+                  <ProgramCard
+                    logoUrl={program.logoUrl}
+                    altText={program.organization}
+                    title={program.title}
+                    organization={program.organization}
+                    category={program.category}
+                    dates={program.dates}
+                    status={program.status}
+                    href={program.href}
+                    description={program.description}
+                    designation={program.designation}
+                    platform={program.platform}
+                    accent={program.accent}
+                  />
+                </BlurFade>
+              ))}
+            </div>
           </div>
         </section>
 

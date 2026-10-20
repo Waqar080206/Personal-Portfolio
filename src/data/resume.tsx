@@ -9,10 +9,31 @@ import {
   PencilLine,
 } from "lucide-react";
 
+export interface WorkRole {
+  title: string;
+  start: string;
+  end?: string;
+  description?: string;
+}
+
+export interface WorkExperience {
+  company: string;
+  href?: string;
+  badges?: string[];
+  location?: string;
+  title?: string;
+  icon: boolean;
+  logoUrl: string;
+  start: string;
+  end?: string;
+  description?: string;
+  roles?: WorkRole[];
+}
+
 export const DATA = {
   name: "Waqar Akhtar",
   initials: "WA",
-  url: "https://waqar.tech",
+  url: "https://waqarakhtar.codes",
   location: "Delhi, India",
   locationLink: "https://www.google.com/maps/place/delhi",
   description:
@@ -89,32 +110,135 @@ export const DATA = {
   },
   work: [
     {
-      company: "IoSC EDC",
-      href: "https://www.iosc-edc.club/",
-      badges: ["Delhi", "India"],
-      location: "USAR, Delhi",
-      title: "Core Team Member",
+      company: "SYNK",
+      href: "https://synk.today/",
+      badges: ["Remote"],
+      location: "Austin, Texas, United States",
+      title: "Forward Deployed Engineering Intern",
+      icon: false,
+      logoUrl: "/experience/synk.jpg",
+      start: "August 2026",
+      end: "October 2026",
+      description: `• Developed customizable meeting-room experiences based on host descriptions, enabling personalized and engaging sessions.
+      \n• Built features that provide hosts with insights and recommendations based on the common interests of registered participants.`,
+    },
+    {
+      company: "INTEL oneAPI STUDENT CLUB · EDC (IoSC EDC)",
+      href: "https://www.iosc.win/",
+      badges: ["USAR, Delhi, India"],
+      location: "USAR, Delhi, India",
       icon: false,
       logoUrl: "/experience/iosc.jpg",
       start: "November 2024",
       end: "Present",
-      description: `• Organized multiple technical and community events including BhasaBandhu (MeitY), DockUp orientation & quiz, and a structured one-month mentorship program at IOSC.
-      \n• Core organizer for Azinhack 2025, managing on-ground operations and developing the main landing page of [azinhack.xyz](https://azinhack.xyz).`,
+      roles: [
+        {
+          title: "Tech Lead",
+          start: "May 2026",
+          end: "Present",
+          description: `Lead technical initiatives and contribute to the development and execution of the club's technical activities.`,
+        },
+        {
+          title: "i5 Team Co-Lead",
+          start: "November 2025",
+          end: "May 2026",
+          description: `Co-led the i5 team, supporting technical initiatives, team coordination, and execution of planned activities.`,
+        },
+        {
+          title: "Core Team Member",
+          start: "November 2024",
+          end: "November 2025",
+          description: `• Organized technical and community initiatives, including BhasaBandhu (MeitY), DockUp orientation and quiz, and a structured one-month mentorship program.
+      \n• Served as a core organizer for Azinhack 2025, managing on-ground operations and developing the main landing page for [azinhack.xyz](https://azinhack.xyz/).`,
+        },
+      ],
     },
     {
-      company: "TnP Cell GGSIPU EDC",
+      company: "TnP Cell, GGSIPU EDC",
       href: "https://sites.google.com/view/ggsipuedc/students/training-placement/tp-usar",
-      badges: ["Delhi", "India"],
-      location: "USAR, Delhi",
+      badges: ["USAR, Delhi, India"],
+      location: "USAR, Delhi, India",
       title: "Database Manager",
       icon: false,
       logoUrl: "/experience/tnp.jpg",
       start: "July 2025",
-      end: "Present",
-      description: `* Maintained and structured databases of students and companies to support efficient placement workflows and data-driven decision-making. 
-        \n* Drafted and distributed official notices, drive announcements, and eligibility communications for campus placements. 
-        \n* Assisted in organizing a NASSCOM event on campus, handling coordination, communication, and operational support.`,
-    }
+      end: "October 2025",
+      description: `* Maintained and structured student and company databases to support placement operations and data-driven decision-making.
+        \n* Drafted and distributed official notices, placement-drive announcements, and eligibility communications.
+        \n* Supported the organization of a NASSCOM campus event, contributing to coordination, communication, and operational execution.`,
+    },
+  ] as WorkExperience[],
+  programs: [
+    {
+      title: "Aspire Leaders Program",
+      organization: "Aspire Institute",
+      href: "https://www.aspireleaders.org/",
+      category: "Leadership Development",
+      dates: "July 2026 – September 2026",
+      status: "Completed",
+      designation: "Aspire Leaders Program Fellow",
+      accent: true,
+      description:
+        "Completed Cohort 3, developing leadership, communication, critical-thinking, and personal-development skills.",
+      logoUrl: "/programs/aspire.jpg",
+    },
+    {
+      title: "Extended Leadership Program",
+      organization: "Aspire Institute",
+      href: "https://www.aspireleaders.org/",
+      category: "Higher Education & Research",
+      dates: "2026",
+      status: "Selected",
+      accent: true,
+      description:
+        "Selected for the Higher Education & Research pathway, focused on graduate school applications, research support, standardized examinations, mentorship, and professional networking.",
+      logoUrl: "/programs/aspire.jpg",
+    },
+    {
+      title: "McKinsey Forward",
+      organization: "McKinsey & Company",
+      href: "https://www.mckinsey.com/forward",
+      category: "Professional Development",
+      dates: "2026 – Present",
+      status: "In Progress",
+      description:
+        "Developing structured problem-solving, analytical thinking, communication, and adaptability through a professional development program.",
+      logoUrl: "/programs/mckinsey.jpg",
+    },
+    {
+      title: "AI Automation & Intelligent Solutions",
+      organization: "BharatCares (CSRBOX Group)",
+      href: "https://skillsbuild.org/",
+      category: "AI Training Internship",
+      dates: "June 2026 – July 2026",
+      status: "Completed",
+      platform: "IBM SkillsBuild",
+      description:
+        "Completed a six-week training program covering Agentic AI, AI workflows, transformer architecture, large language models, and intelligent automation, with a project component.",
+      logoUrl: "/programs/ibm.png",
+    },
+    {
+      title: "Machine Learning Program",
+      organization: "FlyRank AI",
+      href: "https://flyrank.ai/",
+      category: "Self-Paced Learning",
+      dates: "July 2026 – September 2026",
+      status: "Completed",
+      description:
+        "Completed a self-paced learning program focused on machine learning and its applications in AI-driven organic growth.",
+      logoUrl: "/programs/flyrank.jpg",
+    },
+    {
+      title: "Deloitte Technology Virtual Experience",
+      organization: "Deloitte · Forage",
+      href: "https://www.theforage.com/",
+      category: "Virtual Job Simulation",
+      dates: "July 2025",
+      status: "Completed",
+      description:
+        "Completed a software development job simulation focused on client requirements analysis and technical solution design.",
+      logoUrl: "/programs/deloitte.png",
+    },
   ],
   education: [
     {
