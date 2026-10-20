@@ -436,132 +436,136 @@ export const DATA = {
       image: "/projects/uni/u1.png",
       video: ""
     }
+  ],featuredProjects: [
+  {
+    title: "KERB - Preserve the Curve",
+    href: "https://github.com/PrithviKaushik/kerb",
+    dates: "2026",
+    active: true,
+    description:
+      "AI-powered motorsport intelligence system that identifies potential track-limit violations in race footage and generates evidence packages for human stewards. Combines YOLOv12, ByteTrack, vehicle geometry, temporal filtering, and trust scoring. A steward-assist system, never an automatic referee.",
+    technologies: [
+      "Next.js",
+      "Python",
+      "YOLOv12",
+      "ByteTrack",
+      "OpenCV",
+      "FFmpeg",
+      "Google Colab",
+    ],
+    links: [
+      {
+        type: "Github",
+        href: "https://github.com/PrithviKaushik/kerb",
+        icon: <Icons.github className="size-3" />,
+      },
+      {
+        type: "Demo",
+        href: "https://www.youtube.com/watch?v=nYmELOBlbnM",
+        icon: <Icons.youtube className="size-3" />,
+      },
+      {
+        type: "Demo 2",
+        href: "https://youtu.be/0A50hWYAvR0",
+        icon: <Icons.youtube className="size-3" />,
+      },
+    ],
+    image: "/projects/kerb/kerb.png",
+    video: "",
+  },
+  {
+    title: "SIF-Trace",
+    href: "",
+    dates: "2026",
+    active: true,
+    description:
+      "An explainable AI/NLP system that identifies Serious Injury and Fatality (SIF) precursors hidden in industrial safety reports. Uses an LLM to extract semantic facts and a deterministic safety engine to evaluate critical barriers, reason about their states, and generate evidence-backed safety intelligence. Selected for the Smart India Hackathon 2026 National Final Round.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Python",
+      "REST API",
+      "Gemini LLM",
+      "Custom SIF Ontology",
+      "Deterministic Safety Engine",
+      "JSON Schema",
+    ],
+    links: [],
+    image: "/projects/sif.jpeg",
+    video: "",
+  },
+{
+  title: "Threadly",
+  href: "https://threadly1-gules.vercel.app",
+  dates: "2026",
+  active: true,
+  description:
+    "An AI-powered relationship intelligence platform that helps individuals and teams build, manage, and maintain meaningful connections. Features a coordinated crew of AI agents for contact enrichment, personalized follow-ups, email qualification, social conversation monitoring, and meeting intelligence. Builds a living relationship graph with context-aware insights, relationship warmth scoring, and human-approved outreach.",
+  technologies: [
+    "AI Agents",
+    "LLMs",
+    "Relationship Intelligence",
+    "Workflow Automation",
+    "Natural Language Processing",
+    "Multi-Agent Systems",
   ],
-  featuredProjects: [
-    // Handpicked 4 projects for main page
+  links: [
     {
-      title: "EchoME X",
-      href: "https://github.com/Waqar080206/EchoME-X",
-      dates: "",
-      active: true,
-      description:
-        "EchoMe X is an AI Twin platform that allows users to create digital personas that mimic their communication style and personality. The platform features a comprehensive interface for twin creation through personality assessment, real-time chat interaction, and analytics dashboard with insights into your AI twin's performance.",
-      technologies: [
-        "HTML CSS",
-        "JavaScript",
-        "Express.js",
-        "Node.js",
-        "MongoDB",
-        "Groq API",
-        "Restful API",
-      ],
-      links: [
-        {          
-          type: "Website",
-          href: "https://echo-me-x.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Github",
-          href: "https://github.com/Waqar080206/EchoME-X/",
-          icon: <Icons.github className="size-3" />,
-        },
-        {
-          type: "Devpost",
-          href: "https://devpost.com/software/echome-x",
-          icon: <Icons.devpost className="size-3" />,
-        },
-        {
-          type: "YouTube",
-          href: "https://www.youtube.com/watch?v=6pOPbPVDp7c&t=7s",
-          icon: <Icons.youtube className="size-3" />,
-        },
-      ],
-      image: "/projects/echomex.jpg",
-      video: "",
+      type: "Website",
+      href: "https://threadly1-gules.vercel.app",
+      icon: <Icons.globe className="size-3" />,
     },
     {
-      title: "Restaurant Insights Analytics",
-      href: "https://curly-octo-spork-two.vercel.app/",
-      dates: "",
-      active: true,
-      description:
-        "This comprehensive Database Management System (DBMS) project analyzes Zomato restaurant data from Delhi NCR region using SQL-driven analytics and modern web technologies. The project demonstrates advanced database design, normalization, complex queries, data visualization, and machine learning integration.",
-      technologies: [
-        "Next.js",
-        "MySQL",
-        "TypeScript",
-        "Tailwind CSS",
-        "Python",
-        "ML",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://curly-octo-spork-two.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Github",
-          href: "https://github.com/Waqar080206/curly-octo-spork",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "/projects/risql/risql.png",
-      video: "",
+      type: "Github",
+      href: "https://github.com/Waqar080206/threadly1",
+      icon: <Icons.github className="size-3" />,  
     },
-    {
-      title: "PrepPal AI",
-      href: "https://preppal-pi.vercel.app/",
-      dates: "",
-      active: true,
-      description:
-        "PrepPal is a smart web app built to supercharge students' learning experience using AI. It includes powerful tools like note summarization, chatbot assistance, quiz and flashcard generation, and more with multi mode support.",
-      technologies: [
-        "HTML",
-        "JavaScript",
-        "CSS",
-        "TailwindCSS",
-        "Magic Loop",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://preppal-pi.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Github",
-          href: "https://github.com/Waqar080206/PrepPal",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "/projects/preppal/project1.png",
-      video: "",
-    },
-    {
-      title: "USAR Samvad",
-      href: "https://github.com/IoscEdc/IoSC-Student-Teacher", // Add GitHub link if available
-      dates: "2024",
-      active: true,
-      description: "Comprehensive School Management System supporting 6,000+ concurrent users with attendance tracking, role-based access, and performance visualization.",
-      technologies: ["React.js", "Redux", "Node.js", "Express.js", "MongoDB", "Material UI"],
-      links: [
-        {
-          type: "Source",
-          href: "https://github.com/IoscEdc/IoSC-Student-Teacher", // Add actual GitHub link
-          icon: <Icons.github className="size-3" />
-        },
-        {
-          type: "Website",
-          href: "https://ioscstudentteacher.vercel.app/", // Add actual demo link
-          icon: <Icons.globe className="size-3" />
-        }
-      ],
-      image: "/projects/uni/u1.png",
-      video: ""
-    }
   ],
+  image: "/projects/threadly/threadly.png",
+  video: "",
+},{
+  title: "LapLogic",
+  href: "https://fullofwater.vercel.app",
+  dates: "2026",
+  active: true,
+  description:
+    "A Web3-powered Formula 1 fantasy strategy game built around the 2026 season. Build your team with 3 drivers and 1 constructor under a 60M GameCoin budget, tackle AI-generated race prediction challenges, and compete through skill-based strategy. Built on Polygon with smart-contract-powered payouts, wallet integration, and a frictionless onboarding experience that requires no upfront crypto.",
+  technologies: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Solidity",
+    "ethers.js",
+    "MongoDB",
+    "MetaMask",
+    "Polygon",
+    "Web3",
+    "AI Integration",
+  ],
+  links: [
+    {
+      type: "Website",
+      href: "https://fullofwater.vercel.app",
+      icon: <Icons.globe className="size-3" />,
+    },
+    {
+      type: "Github",
+      href: "https://github.com/Waqar080206/fullofwater ",
+      icon: <Icons.github className="size-3" />,
+    },
+    {type: "Demo", href: "https://www.youtube.com/watch?v=UqownB3Gj48&", icon: <Icons.youtube className="size-3" />},
+    {
+      type: "Devfolio",
+      href: "https://devfolio.co/projects/laplogic-11e5",
+      icon: <Icons.globe className="size-3" />,
+    },
+  ],
+  image: "/projects/laplogic/laplogic.png",
+  video: "",
+},
+],
   hackathons: [
       {
       title: "Code with Kiro Hackathon",

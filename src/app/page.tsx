@@ -49,6 +49,7 @@ export default function Page() {
                 <Markdown className="text-center md:text-start max-w-[600px] text-pretty font-sans md:text-lg">
                   {DATA.description}
                 </Markdown>
+               
               </div>
               <Avatar className="size-36 mx-auto">
                 <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
@@ -80,62 +81,6 @@ export default function Page() {
                 </BlurFade>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section id="projects">
-          <div className="space-y-12 w-full py-12">
-            <BlurFade delay={BLUR_FADE_DELAY * 11}>
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                    My Projects
-                  </div>
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    Featured Work
-                  </h2>
-                  <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Here are some of my standout projects that showcase my technical skills and problem-solving abilities.
-                  </p>
-                </div>
-              </div>
-            </BlurFade>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-              {DATA.featuredProjects.map((project, id) => (
-                <BlurFade
-                  key={project.title}
-                  delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-                >
-                  <ProjectCard
-                    href={project.href}
-                    title={project.title}
-                    description={project.description}
-                    dates={project.dates}
-                    tags={project.technologies}
-                    image={project.image}
-                    video={project.video}
-                    links={project.links}
-                  />
-                </BlurFade>
-              ))}
-            </div>
-            <BlurFade delay={BLUR_FADE_DELAY * 13}>
-              <div className="flex justify-center">
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-                >
-                  See more projects...
-                                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M17 8l4 4m0 0l-4 4m4-4H3" 
-                    />
-                  
-                </Link>
-              </div>
-            </BlurFade>
           </div>
         </section>
 
@@ -206,6 +151,62 @@ export default function Page() {
                 </BlurFade>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section id="projects">
+          <div className="space-y-12 w-full py-12">
+            <BlurFade delay={BLUR_FADE_DELAY * 11}>
+              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <div className="space-y-2">
+                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                    My Projects
+                  </div>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                    Featured Work
+                  </h2>
+                  <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    Here are some of my standout projects that showcase my technical skills and problem-solving abilities.
+                  </p>
+                </div>
+              </div>
+            </BlurFade>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+              {DATA.featuredProjects.map((project, id) => (
+                <BlurFade
+                  key={project.title}
+                  delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                >
+                  <ProjectCard
+                    href={project.href}
+                    title={project.title}
+                    description={project.description}
+                    dates={project.dates}
+                    tags={project.technologies}
+                    image={project.image}
+                    video={project.video}
+                    links={project.links}
+                  />
+                </BlurFade>
+              ))}
+            </div>
+            <BlurFade delay={BLUR_FADE_DELAY * 13}>
+              <div className="flex justify-center">
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+                >
+                  See more projects...
+                                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M17 8l4 4m0 0l-4 4m4-4H3" 
+                    />
+                  
+                </Link>
+              </div>
+            </BlurFade>
           </div>
         </section>
 
