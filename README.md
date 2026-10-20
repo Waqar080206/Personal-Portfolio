@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my journey as a B.Tech AI & Da
 
 ## 🌟 Demo
 
-You can view the live site at [waqar.tech](https://waqar.tech)
+You can view the live site at [waqar.tech](https://waqarakhtar.codes)
 
 ## ✨ Features
 
