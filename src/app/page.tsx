@@ -202,7 +202,6 @@ export default function Page() {
                     description={program.description}
                     designation={program.designation}
                     platform={program.platform}
-                    accent={program.accent}
                   />
                 </BlurFade>
               ))}

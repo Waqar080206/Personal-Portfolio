@@ -25,7 +25,6 @@ interface ProgramCardProps {
   designation?: string;
   platform?: string;
   href?: string;
-  accent?: boolean;
 }
 
 export const ProgramCard = ({
@@ -40,30 +39,22 @@ export const ProgramCard = ({
   designation,
   platform,
   href,
-  accent,
 }: ProgramCardProps) => {
   const card = (
-    <Card
-      className={cn(
-        "group flex h-full flex-col border bg-background p-4 transition-all duration-300 ease-out hover:border-foreground/20 hover:shadow-lg",
-        accent && "border-l-2 border-l-foreground/25"
-      )}
-    >
+    <Card className="group flex h-full flex-col border bg-background p-4 transition-all duration-300 ease-out hover:border-foreground/20 hover:shadow-lg">
       <div className="flex items-start gap-3">
-        <Avatar className="size-10 flex-none bg-gray-300 ring-1 ring-border dark:bg-transparent">
+        <Avatar className="size-10 flex-none bg-gray-300 p-0.5 ring-1 ring-border dark:bg-transparent">
           <AvatarImage
             src={logoUrl}
             alt={altText}
-            className="object-contain"
+            className="object-contain object-center"
           />
           <AvatarFallback className="text-xs">{altText[0]}</AvatarFallback>
         </Avatar>
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-x-2">
             <div className="min-w-0 space-y-0.5">
-              <p className="truncate text-xs text-muted-foreground">
-                {organization}
-              </p>
+              <p className="text-xs text-muted-foreground">{organization}</p>
               <h3 className="text-[13px] font-semibold leading-snug sm:text-sm">
                 {title}
               </h3>
@@ -110,7 +101,8 @@ export const ProgramCard = ({
         )}
         {platform && (
           <span className="text-[11px] text-muted-foreground">
-            Learning platform: {platform}
+            <span className="font-medium text-foreground/75">Platform</span>:{" "}
+            {platform}
           </span>
         )}
       </div>

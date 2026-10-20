@@ -123,10 +123,11 @@ export const DATA = {
       \n• Built features that provide hosts with insights and recommendations based on the common interests of registered participants.`,
     },
     {
-      company: "INTEL oneAPI STUDENT CLUB · EDC (IoSC EDC)",
+      company: "IoSC EDC",
       href: "https://www.iosc.win/",
       badges: ["USAR, Delhi, India"],
       location: "USAR, Delhi, India",
+      title: "INTEL oneAPI STUDENT CLUB · EDC",
       icon: false,
       logoUrl: "/experience/iosc.jpg",
       start: "November 2024",
@@ -177,7 +178,6 @@ export const DATA = {
       dates: "July 2026 – September 2026",
       status: "Completed",
       designation: "Aspire Leaders Program Fellow",
-      accent: true,
       description:
         "Completed Cohort 3, developing leadership, communication, critical-thinking, and personal-development skills.",
       logoUrl: "/programs/aspire.jpg",
@@ -189,9 +189,8 @@ export const DATA = {
       category: "Higher Education & Research",
       dates: "2026",
       status: "Selected",
-      accent: true,
       description:
-        "Selected for the Higher Education & Research pathway, focused on graduate school applications, research support, standardized examinations, mentorship, and professional networking.",
+        "Selected for the Higher Education & Research pathway, covering graduate school applications, research support, exam preparation, mentorship, and networking.",
       logoUrl: "/programs/aspire.jpg",
     },
     {
@@ -199,10 +198,10 @@ export const DATA = {
       organization: "McKinsey & Company",
       href: "https://www.mckinsey.com/forward",
       category: "Professional Development",
-      dates: "2026 – Present",
-      status: "In Progress",
+      dates: "2026",
+      status: "Completed",
       description:
-        "Developing structured problem-solving, analytical thinking, communication, and adaptability through a professional development program.",
+        "Developing structured problem-solving, analytical thinking, and communication skills through a professional development program.",
       logoUrl: "/programs/mckinsey.jpg",
     },
     {
@@ -214,7 +213,7 @@ export const DATA = {
       status: "Completed",
       platform: "IBM SkillsBuild",
       description:
-        "Completed a six-week training program covering Agentic AI, AI workflows, transformer architecture, large language models, and intelligent automation, with a project component.",
+        "Completed a six-week program covering Agentic AI, AI workflows, transformer architecture, large language models, and intelligent automation, with a project.",
       logoUrl: "/programs/ibm.png",
     },
     {
