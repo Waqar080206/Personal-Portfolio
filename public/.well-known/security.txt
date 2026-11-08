@@ -1,0 +1,7 @@
+Contact: mailto:syed.waqar.akhtar08@gmail.com
+Contact: https://www.linkedin.com/in/waqar08
+Contact: https://github.com/Waqar080206
+Expires: 2028-01-31T23:59:00.000Z
+Preferred-Languages: en
+Canonical: https://waqarakhtar.codes/.well-known/security.txt
+Policy: https://waqarakhtar.codes/llms.txt
