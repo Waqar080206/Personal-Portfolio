@@ -59,4 +59,5 @@ Main pages and key sections of the site. Base URL: https://waqarakhtar.codes
 
 - Built with Next.js 14 (App Router, static export), TypeScript, Tailwind CSS, and shadcn/ui; animated with Framer Motion; hosted on Vercel
 - Open source under the MIT License at [github.com/Waqar080206/portfolio](https://github.com/Waqar080206/portfolio)
+- Programmatic access: [OpenAPI spec](https://waqarakhtar.codes/openapi.json) and [MCP tool manifest](https://waqarakhtar.codes/.well-known/mcp.json)
 - Content is accurate as of November 2026

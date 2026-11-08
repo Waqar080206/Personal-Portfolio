@@ -311,6 +311,14 @@ export default function Page() {
       <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
     </svg>
     <a
+      href="/openapi.json"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-base text-muted-foreground hover:text-foreground underline-offset-2 hover:underline transition-colors duration-200 mr-4"
+    >
+      openapi.json
+    </a>
+    <a
       href="/llms.txt"
       target="_blank"
       rel="noopener noreferrer"

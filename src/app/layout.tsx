@@ -17,7 +17,12 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "WA", 
   description: "Waqar Akhtar - AI & Data Science Student | Full Stack Developer",
-  metadataBase: new URL('https://personal-portfolio-psi-ashy.vercel.app/'), // or remove this line completely
+  metadataBase: new URL('https://waqarakhtar.codes'),
+  alternates: {
+    types: {
+      "text/markdown": "/home.md",
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },

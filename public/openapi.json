@@ -1,0 +1,127 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Waqar Akhtar — Portfolio API",
+    "version": "1.0.0",
+    "description": "Read-only, programmatic access to Waqar Akhtar's portfolio website (https://waqarakhtar.codes). All endpoints are public, require no authentication, and are served as static files. Content covers bio, skills, professional experience, education, projects, hackathon achievements, resume (PDF), and a plain-language AI site overview (llms.txt). An MCP tool manifest is also available at /.well-known/mcp.json.",
+    "contact": {
+      "name": "Waqar Akhtar",
+      "email": "syed.waqar.akhtar08@gmail.com",
+      "url": "https://waqarakhtar.codes/"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/Waqar080206/portfolio"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://waqarakhtar.codes",
+      "description": "Production site (static export)"
+    }
+  ],
+  "paths": {
+    "/llms.txt": {
+      "get": {
+        "summary": "Site overview for AI assistants",
+        "description": "Plain-language description of Waqar Akhtar and the site, with a structured index of every key page, project, achievement, and contact channel. Best starting point for agents.",
+        "operationId": "getSiteOverview",
+        "responses": {
+          "200": {
+            "description": "llms.txt document",
+            "content": {
+              "text/plain": {
+                "schema": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Home page",
+        "description": "Hero introduction, about summary, skills badges, experience timeline, programs, featured work, education, resume link, and contact section. Key content anchors: #about, #skills, #experience, #programs, #projects, #education, #contact.",
+        "operationId": "getHomePage",
+        "responses": {
+          "200": {
+            "description": "Home page HTML",
+            "content": {
+              "text/html": {
+                "schema": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/projects/": {
+      "get": {
+        "summary": "Projects page",
+        "description": "Full, categorized list of all projects with descriptions, tech stacks, and links to live demos and source code.",
+        "operationId": "getProjects",
+        "responses": {
+          "200": {
+            "description": "Projects page HTML",
+            "content": {
+              "text/html": {
+                "schema": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Waqar_Resume.pdf": {
+      "get": {
+        "summary": "Resume (PDF)",
+        "description": "Download Waqar Akhtar's resume as a PDF document.",
+        "operationId": "getResume",
+        "responses": {
+          "200": {
+            "description": "Resume PDF",
+            "content": {
+              "application/pdf": {
+                "schema": { "type": "string", "format": "binary" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/.well-known/mcp.json": {
+      "get": {
+        "summary": "MCP tool manifest",
+        "description": "MCP discovery manifest describing read-only tools agents can use (URL-based GET tools for overview, home, projects, individual project lookup, resume, and contact info).",
+        "operationId": "getMcpManifest",
+        "responses": {
+          "200": {
+            "description": "MCP manifest JSON",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/openapi.json": {
+      "get": {
+        "summary": "This OpenAPI specification",
+        "description": "Returns this OpenAPI 3.1 document describing programmatic access to the site.",
+        "operationId": "getOpenApiSpec",
+        "responses": {
+          "200": {
+            "description": "OpenAPI specification JSON",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

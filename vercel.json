@@ -1,0 +1,31 @@
+{
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</home.md>; rel=\"alternate\"; type=\"text/markdown\""
+        }
+      ]
+    },
+    {
+      "source": "/projects",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</projects.md>; rel=\"alternate\"; type=\"text/markdown\""
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</home.md>; rel=\"alternate\"; type=\"text/markdown\""
+        }
+      ]
+    }
+  ]
+}
