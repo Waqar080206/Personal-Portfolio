@@ -25,7 +25,7 @@ export default function ProjectsPage() {
   };
 
   return (
-    <div className="container max-w-6xl mx-auto py-12 px-4 space-y-12">
+    <main className="container max-w-6xl mx-auto py-12 px-4 space-y-12">
       <BlurFade delay={BLUR_FADE_DELAY}>
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -98,6 +98,6 @@ export default function ProjectsPage() {
         isOpen={isModalOpen}
         onClose={closeModal}
       />
-    </div>
+    </main>
   );
 }

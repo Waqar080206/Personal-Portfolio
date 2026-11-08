@@ -287,7 +287,7 @@ export default function Page() {
                         .map(([name, social], index) => (
                           <Tooltip key={index}>
                             <TooltipTrigger asChild>
-                              <Link href={social.url as unknown as UrlObject}>
+                              <Link href={social.url as unknown as UrlObject} aria-label={name}>
                                 <social.icon className="size-7" />
                               </Link>
                             </TooltipTrigger>

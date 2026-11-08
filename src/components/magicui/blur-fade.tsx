@@ -40,8 +40,8 @@ const BlurFade = ({
   const isInView = !inView || inViewResult;
   
   const defaultVariants: Variants = {
-    hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
-    visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
+    hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})`, visibility: "hidden" },
+    visible: { y: -yOffset, opacity: 1, filter: `blur(0px)`, visibility: "visible" },
   };
   
   const combinedVariants = variant || defaultVariants;
