@@ -1,0 +1,83 @@
+{
+  "mcp": "1.0",
+  "server": {
+    "name": "waqarakhtar-portfolio",
+    "title": "Waqar Akhtar — Portfolio",
+    "version": "1.0.0",
+    "description": "Read-only tools for exploring Waqar Akhtar's personal portfolio: bio, skills, experience timeline, projects, education, resume, and contact information. All tools are plain HTTPS GET requests returning text/HTML or text/markdown; no authentication required.",
+    "websiteUrl": "https://waqarakhtar.codes/",
+    "instructions": "Use these tools to answer questions about who Waqar Akhtar is, what he has built, his experience and education, and how to contact him. Start with get_site_overview for a plain-language summary (llms.txt), then fetch specific pages as needed."
+  },
+  "tools": [
+    {
+      "name": "get_site_overview",
+      "description": "Fetch the llms.txt overview: a plain-language description of Waqar Akhtar, the site's contents, and links to all key pages. Best starting point for orienting on the site.",
+      "method": "GET",
+      "endpoint": "https://waqarakhtar.codes/llms.txt",
+      "responseFormat": "text/plain",
+      "inputSchema": { "type": "object", "properties": {}, "additionalProperties": false },
+      "readonly": true
+    },
+    {
+      "name": "get_home_page",
+      "description": "Fetch the home page: hero introduction, about summary, skills badges, experience timeline, education, and contact section.",
+      "method": "GET",
+      "endpoint": "https://waqarakhtar.codes/",
+      "responseFormat": "text/html",
+      "inputSchema": { "type": "object", "properties": {}, "additionalProperties": false },
+      "readonly": true
+    },
+    {
+      "name": "get_projects",
+      "description": "Fetch the full projects page listing every project with descriptions, tech stacks, and links to live demos and source code.",
+      "method": "GET",
+      "endpoint": "https://waqarakhtar.codes/projects/",
+      "responseFormat": "text/html",
+      "inputSchema": { "type": "object", "properties": {}, "additionalProperties": false },
+      "readonly": true
+    },
+    {
+      "name": "get_project",
+      "description": "Fetch one specific project's page from the projects page. Provide the project title exactly as one of: EchoME X, Restaurant Insights Analytics, PrepPal AI, Hydro Heroes, Azinhack 2025, USAR Samvad, KERB - Preserve the Curve, SIF-Trace, Threadly, LapLogic.",
+      "method": "GET",
+      "endpoint": "https://waqarakhtar.codes/projects/",
+      "responseFormat": "text/html",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Exact project title, e.g. \"EchoME X\" or \"LapLogic\""
+          }
+        },
+        "required": ["title"],
+        "additionalProperties": false
+      },
+      "readonly": true
+    },
+    {
+      "name": "get_resume",
+      "description": "Download Waqar Akhtar's resume as a PDF document.",
+      "method": "GET",
+      "endpoint": "https://waqarakhtar.codes/Waqar_Resume.pdf",
+      "responseFormat": "application/pdf",
+      "inputSchema": { "type": "object", "properties": {}, "additionalProperties": false },
+      "readonly": true
+    },
+    {
+      "name": "get_contact_info",
+      "description": "Fetch the Get in Touch section: email address and links to GitHub, LinkedIn, X (Twitter), and the Dev.to blog. Also available directly via the mailto link in the response.",
+      "method": "GET",
+      "endpoint": "https://waqarakhtar.codes/#contact",
+      "responseFormat": "text/html",
+      "inputSchema": { "type": "object", "properties": {}, "additionalProperties": false },
+      "readonly": true
+    }
+  ],
+  "resources": [
+    { "uri": "https://waqarakhtar.codes/llms.txt", "name": "llms.txt", "mimeType": "text/plain", "description": "Plain-language AI/LLM site overview" },
+    { "uri": "https://waqarakhtar.codes/", "name": "Home", "mimeType": "text/html", "description": "Bio, skills, experience, education, contact" },
+    { "uri": "https://waqarakhtar.codes/projects/", "name": "Projects", "mimeType": "text/html", "description": "All projects with details and links" },
+    { "uri": "https://waqarakhtar.codes/Waqar_Resume.pdf", "name": "Resume", "mimeType": "application/pdf", "description": "Downloadable resume" }
+  ]
+}
