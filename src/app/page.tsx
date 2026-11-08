@@ -303,6 +303,24 @@ export default function Page() {
             </BlurFade>
           </div>
         </section>
+
+<footer className="w-[100vw] mx-[calc(-50vw+50%)] pb-4">
+  {/* The inner container now correctly sees the true full-width boundaries */}
+  <div className="flex justify-end px-4 md:px-8">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-up-right preview-icon">
+      <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
+    </svg>
+    <a
+      href="/llms.txt"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-base text-muted-foreground hover:text-foreground underline-offset-2 hover:underline transition-colors duration-200"
+    >
+      llms.txt
+    </a>
+  </div>
+</footer>
+
       </Suspense>
     </main>
   );

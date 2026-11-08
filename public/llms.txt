@@ -1,0 +1,62 @@
+# Waqar Akhtar — Portfolio
+
+> Personal portfolio website of Waqar Akhtar, a B.Tech AI & Data Science student at GGSIPU, Delhi, India (batch 2024–2028), and a full-stack developer focused on building functional, user-focused products that solve real problems. The site documents his work across AI-driven applications, data analytics, full-stack web development, and technical leadership — from AI twin and relationship-intelligence platforms to motorsport computer-vision systems, DBMS analytics dashboards, IoT dashboards, and school management systems. It features a professional experience timeline (Forward Deployed Engineering Intern at SYNK; Tech Lead at IoSC EDC; Database Manager at TnP Cell GGSIPU EDC), education history, a comprehensive technical skills list, leadership and professional-development programs (Aspire Leaders Program, McKinsey Forward, IBM SkillsBuild AI internship, Deloitte virtual experience), and hackathon achievements (4th place, Smart Delhi Ideathon 2025; Smart India Hackathon 2026 National Finalist). The site is built with Next.js 14, TypeScript, and Tailwind CSS, supports dark/light mode, and is fully responsive. It was last updated in 2026 and is open source under the MIT License.
+
+## Pages
+
+Main pages and key sections of the site. Base URL: https://waqarakhtar.codes
+
+- [Home](https://waqarakhtar.codes/): Hero introduction and site overview
+- [About](https://waqarakhtar.codes/#about): Summary of skills, approach, and what he is currently expanding into (AI/ML pipelines, cloud infrastructure, scalable architectures)
+- [Skills](https://waqarakhtar.codes/#skills): Technical skills — Java, JavaScript, TypeScript, Python, C, React.js, Next.js, Node.js, Express.js, Flask, React Native, MongoDB, GraphQL, DBMS, NGINX, Git, GitHub Actions, Tailwind CSS, Shadcn UI
+- [Experience](https://waqarakhtar.codes/#experience): Professional timeline with detailed role descriptions
+- [Programs & Professional Development](https://waqarakhtar.codes/#programs): Selected programs, leadership development, and specialized learning experiences
+- [Featured Work](https://waqarakhtar.codes/#projects): Selected project cards with tech stack and links
+- [Education](https://waqarakhtar.codes/#education): Academic background
+- [Resume](https://waqarakhtar.codes/Waqar_Resume.pdf): Downloadable resume (PDF)
+- [Projects](https://waqarakhtar.codes/projects/): Full list of all projects
+- [Get in Touch](https://waqarakhtar.codes/#contact): Contact section with social links
+
+## Experience
+
+- [SYNK — Forward Deployed Engineering Intern](https://synk.today/): August–October 2026, remote (Austin, Texas). Built customizable meeting-room experiences based on host descriptions and features providing hosts with insights from participant interests.
+- [IoSC EDC — Tech Lead](https://www.iosc.win/): May 2026–present. Leads technical initiatives for the Intel oneAPI Student Club. Previously i5 Team Co-Lead (Nov 2025–May 2026) and Core Team Member (Nov 2024–Nov 2025), organizing BhasaBandhu (MeitY), DockUp, and a one-month mentorship program, and as core organizer and landing-page developer for Azinhack 2025.
+- [TnP Cell, GGSIPU EDC — Database Manager](https://sites.google.com/view/ggsipuedc/students/training-placement/tp-usar): July–October 2025. Maintained student and company databases for placement operations, drafted placement notices, and supported a NASSCOM campus event.
+
+## Projects
+
+- [KERB — Preserve the Curve](https://github.com/PrithviKaushik/kerb): AI-powered motorsport intelligence system (YOLOv12, ByteTrack, OpenCV) that identifies potential track-limit violations in race footage and generates evidence packages for human stewards.
+- [SIF-Trace](https://waqarakhtar.codes/projects/): Explainable AI/NLP system that identifies Serious Injury and Fatality (SIF) precursors in industrial safety reports using an LLM and a deterministic safety engine. Smart India Hackathon 2026 National Finalist.
+- [Threadly](https://threadly1-gules.vercel.app/): AI-powered relationship intelligence platform with a coordinated crew of AI agents for contact enrichment, personalized follow-ups, and relationship graph insights.
+- [LapLogic](https://fullofwater.vercel.app/): Web3-powered Formula 1 fantasy strategy game for the 2026 season, built on Polygon with smart-contract payouts, wallet integration, and AI-generated race prediction challenges.
+- [EchoME X](https://echo-me-x.vercel.app/): AI Twin platform for creating digital personas that mimic your communication style, with real-time chat and an analytics dashboard. Built with Express.js, MongoDB, and Groq API ([source](https://github.com/Waqar080206/EchoME-X)).
+- [Restaurant Insights Analytics](https://curly-octo-spork-two.vercel.app/): DBMS project analyzing Zomato restaurant data for Delhi NCR with SQL-driven analytics, data visualization, and ML-based rating prediction. Built with Next.js, MySQL, TypeScript, and Python.
+- [PrepPal AI](https://preppal-pi.vercel.app/): AI-powered study companion with note summarization, chatbot assistance, quiz and flashcard generation ([source](https://github.com/Waqar080206/PrepPal)).
+- [Hydro Heroes](https://github.com/Waqar080206/Hydro-Heroes): IoT-based dashboard monitoring real-time water quality and usage to tackle Delhi's water crisis. 4th place and Lieutenant Governor recognition at Smart Delhi Ideathon 2025.
+- [Azinhack 2025](https://azinhack.xyz/): Official hackathon website with interactive smiley-game elements ([source](https://github.com/Waqar080206/Azinhack)).
+- [USAR Samvad](https://ioscstudentteacher.vercel.app/): School management system supporting 6,000+ concurrent users with attendance tracking, role-based access, and performance visualization. React, Redux, Node.js, Express.js, MongoDB.
+
+## Hackathons & Achievements
+
+- Smart Delhi Ideathon 2025 — 4th place, recognized by the Lieutenant Governor of Delhi (Hydro Heroes)
+- Smart India Hackathon 2026 — Selected for National Final Round (SIF-Trace)
+- Code with Kiro Hackathon — Built Pocketdoc, a photo-based wound/injury guide app ([Devpost](https://devpost.com/software/echome-x))
+- Aspire Leaders Program, Cohort 3 — Fellow (Aspire Institute, 2026)
+- Selected for the Aspire Institute Extended Leadership Program (Higher Education & Research pathway, 2026)
+- McKinsey Forward — Completed (McKinsey & Company)
+- AI Automation & Intelligent Solutions — Six-week internship via IBM SkillsBuild with BharatCares (CSRBOX Group), covering Agentic AI, LLMs, and transformers
+- Deloitte Technology Virtual Experience — Completed software development job simulation (Forage)
+
+## Connect
+
+- [Email](mailto:syed.waqar.akhtar08@gmail.com): Best way to reach out about opportunities and collaborations
+- [LinkedIn](https://www.linkedin.com/in/waqar08): Professional profile
+- [GitHub](https://github.com/Waqar080206): Source code and open-source contributions
+- [X (Twitter)](https://x.com/WaqarAkhtar_08): Updates and posts
+- [Dev.to Blog](https://dev.to/waqar_akhtar_f4a1df2340f1): Technical writing and tutorials
+
+## About This Site
+
+- Built with Next.js 14 (App Router, static export), TypeScript, Tailwind CSS, and shadcn/ui; animated with Framer Motion; hosted on Vercel
+- Open source under the MIT License at [github.com/Waqar080206/portfolio](https://github.com/Waqar080206/portfolio)
+- Content is accurate as of November 2026
